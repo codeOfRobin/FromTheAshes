@@ -83,6 +83,7 @@ public class Socket {
 		if let data = text.data(using: .utf8),
 			let response = Response(data: data),
 			let push = waitingForResponses[response.ref] {
+			print(response)
 			push.handle(response: response)
 		}
 		

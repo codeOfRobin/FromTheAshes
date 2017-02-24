@@ -38,7 +38,7 @@ public struct Channel {
 	
 	public mutating func leave() -> Push? {
 		state = .leaving
-		let ref = UUID().uuidString + "join: \(topic)"
+		let ref = UUID().uuidString + "leave: \(topic)"
 		return socket?.send(event: .leave, topic: topic, payload: [:], ref: ref)
 	}
 }
